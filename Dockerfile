@@ -42,7 +42,7 @@ COPY samba.sh /usr/bin/
 
 EXPOSE 137/udp 138/udp 139 445
 
-HEALTHCHECK --interval=60s --timeout=15s \
+HEALTHCHECK --interval=5s --timeout=2s \
              CMD smbclient -L '\\localhost\' -U 'guest%' -m SMB3
 
 VOLUME ["/etc/samba"]
